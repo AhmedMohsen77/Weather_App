@@ -1,0 +1,175 @@
+/* general style */
+:root {
+  --main-color: #009ad8;
+  --bg-color: #1e202b;
+  --box-color: #323544;
+  --box2-color: #262936;
+  --text-color: #bfc1c8;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--box2-color);
+}
+a,
+a:hover {
+  color: inherit;
+}
+
+span,
+i,
+a {
+  display: inline-block;
+}
+
+.main-color {
+  color: var(--main-color) !important;
+}
+
+.form {
+  background-color: var(--bg-color);
+  padding: 0.25rem;
+  border-radius: 5rem;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 3rem;
+}
+
+.form .input {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  outline: 0;
+}
+
+.form .btn {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: 3rem;
+}
+/* /general style */
+
+/* Navbar style */
+.navbar {
+  background-color: var(--bg-color);
+  padding: 2rem 0;
+}
+
+.navbar .nav-item {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .nav-item:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+.navbar .nav-item a {
+  padding-left: 20px  !important;
+  padding-right: 20px !important;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+  transition: color 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navbar .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 0;
+  height: 100%;
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  border-radius: 30px;
+  transition: width 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navbar .nav-item .nav-link:hover,
+.navbar .nav-item .nav-link.active {
+  color: var(--main-color);
+}
+
+.navbar .nav-item .nav-link:hover::after,
+.navbar .nav-item .nav-link.active::after {
+  width: 100%;
+}
+
+/* /Navbar style */
+
+/* Start weather Section */
+.weather-Container {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.weather {
+  padding: 4rem 0;
+  background: url(../images/pexels-pixabay-259620.jpg) no-repeat center center /
+    100% 100%;
+}
+
+.weather .forecast {
+  background-color: var(--box-color);
+}
+
+.weather .forecast:nth-child(2) {
+  background-color: var(--box2-color);
+}
+
+.weather .forecast .forecast_head {
+  background-color: rgb(0 0 0 / 10%);
+  padding: 1rem 0.5rem;
+}
+/* End weather Section */
+
+/* Start Footer Style */
+.footer {
+  padding: 4rem 0 2rem;
+  background-color: var(--box2-color);
+}
+
+.footer .social {
+}
+
+.footer .social .social-item a {
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--main-color);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  transition: background-color 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer .social .social-item a:hover {
+  color: var(--main-color);
+  background-color: transparent;
+}
+
+.footer .social .social-item a:hover i {
+  animation: move_icon 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1;
+}
+/* End Footer Style */
+
+@keyframes move_icon {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
